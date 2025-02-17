@@ -2,7 +2,7 @@
     "name": "Producciones Herova",
     "short_name": "ProduccionesHerova",
     "description": "Tarjeta de presentación digital de Producciones Herova",
-    "start_url": "/index.html",
+    "start_url": "/producciones-herova/index.html",
     "display": "standalone",
     "background_color": "#1a1a1a",
     "theme_color": "#1a1a1a",
