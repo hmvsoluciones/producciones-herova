@@ -1,0 +1,26 @@
+{
+    "name": "Producciones Herova",
+    "short_name": "ProduccionesHerova",
+    "description": "Tarjeta de presentación digital de Producciones Herova",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1a1a1a",
+    "theme_color": "#1a1a1a",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "assets/logo-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/logo-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["business", "lifestyle"],
+    "prefer_related_applications": false
+}
