@@ -86,17 +86,26 @@
             white-space: nowrap;
             border-right: 3px solid var(--primary);
             width: 0;
-            animation: typing 5s steps(40, end) infinite, blink 0.8s infinite;
+            animation: typing 10s steps(40, end) infinite, blink 0.8s infinite;
         }
 
         @keyframes typing {
-            0% { width: 0; }
-            50% { width: 100%; }
-            100% { width: 0; }
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes blink {
             50% { border-color: transparent; }
+        }
+        @media screen and (max-width: 600px) {
+            .typing-text {
+                font-size: 14px; /* Reduce el tamaño del texto */
+                animation: typing 3s steps(20, end) infinite, blink 0.8s infinite;
+            }
         }
 
         /* Ecualizador ahora debajo del logo */
@@ -245,7 +254,7 @@
         </div>
 
         <h1 style="color: var(--primary);">PRODUCCIONES HEROVA</h1>
-        <p><span class="typing-text">Innovando experiencias musicales</span></p>
+        <p><span class="typing-text">Innovando experiencias musicales.</span></p>
 
         <div class="services">
             <h2>Servicios DJ</h2>
