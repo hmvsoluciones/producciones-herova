@@ -156,7 +156,6 @@
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
             margin-top: 15px;
             background: var(--primary);
             color: var(--dark);
@@ -166,11 +165,10 @@
             transition: 0.3s;
             border: none;
             cursor: pointer;
+            width: 100%;
         }
 
         .btn:hover {
             background: var(--secondary);
         }
-        button {
-            width: 100%;
-        }
+        
