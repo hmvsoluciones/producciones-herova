@@ -1,10 +1,10 @@
-const CACHE_NAME = 'herova-v1';
+const CACHE_NAME = 'herova-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles.css',
   '/app.js',
-  '/assets/logo.png',
+  '/assets/logo-cuadrado.png',
   '/assets/logo-192x192.png',
   '/assets/logo-512x512.png'
 ];

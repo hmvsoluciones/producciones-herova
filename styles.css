@@ -20,6 +20,9 @@
         }
         
         .card {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
             background: rgba(18, 18, 18, 0.95);
             border-radius: 20px;
             padding: 30px;
@@ -38,21 +41,26 @@
             to { box-shadow: 0 0 30px var(--primary); }
         }
 
+        /* Logo horizontal: recorta el margen negro del PNG cuadrado */
         .logo {
-            width: 150px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 320px;
             height: 150px;
-            margin: 20px auto;
-            border-radius: 50%;
+            margin: 15px auto 5px;
+            border-radius: 18px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            padding: 5px;
+            padding: 4px;
             animation: pulse 2s infinite;
         }
 
         .logo img {
+            display: block;
             width: 100%;
             height: 100%;
-            border-radius: 50%;
+            border-radius: 14px;
             object-fit: cover;
+            object-position: center;
         }
 
         @keyframes pulse {
@@ -170,5 +178,82 @@
 
         .btn:hover {
             background: var(--secondary);
+        }
+
+        /* Redes sociales de la tarjeta */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 4px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: var(--light);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(0, 247, 255, 0.45);
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.25s, box-shadow 0.25s, background 0.25s, color 0.25s;
+        }
+
+        .social-link i {
+            font-size: 1.15rem;
+            color: var(--primary);
+            transition: color 0.25s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            color: var(--light);
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            border-color: transparent;
+            box-shadow: 0 0 16px rgba(238, 42, 123, 0.6);
+        }
+
+        .social-link.facebook:hover {
+            background: #1877f2;
+            border-color: transparent;
+            box-shadow: 0 0 16px rgba(24, 119, 242, 0.6);
+        }
+
+        .social-link.instagram:hover i,
+        .social-link.facebook:hover i {
+            color: var(--light);
+        }
+
+        .social-link:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 3px;
+        }
+
+        /* Ajuste para que la tarjeta quepa en pantallas de celular */
+        @media screen and (max-width: 520px) {
+            body {
+                padding: 12px;
+                align-items: flex-start;
+            }
+
+            .card {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .card h1 {
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+            }
         }
         
