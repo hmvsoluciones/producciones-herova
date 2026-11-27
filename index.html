@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producciones Herova - Digital Card</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="apple-touch-icon" href="assets/logo-192x192.png">
     <!-- Para iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#00f7ff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/logo-192x192.png" type="image/png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
@@ -38,6 +38,9 @@
         }
         
         .card {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
             background: rgba(18, 18, 18, 0.95);
             border-radius: 20px;
             padding: 30px;
@@ -56,21 +59,26 @@
             to { box-shadow: 0 0 30px var(--primary); }
         }
 
+        /* Logo horizontal: recorta el margen negro del PNG cuadrado */
         .logo {
-            width: 150px;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 320px;
             height: 150px;
-            margin: 20px auto;
-            border-radius: 50%;
+            margin: 15px auto 5px;
+            border-radius: 18px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            padding: 5px;
+            padding: 4px;
             animation: pulse 2s infinite;
         }
 
         .logo img {
+            display: block;
             width: 100%;
             height: 100%;
-            border-radius: 50%;
+            border-radius: 14px;
             object-fit: cover;
+            object-position: center;
         }
 
         @keyframes pulse {
@@ -237,12 +245,30 @@
     align-items: center;
     
 }
+
+        /* Ajuste para que la tarjeta quepa en pantallas de celular */
+        @media screen and (max-width: 520px) {
+            body {
+                padding: 12px;
+                align-items: flex-start;
+            }
+
+            .card {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .card h1 {
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="logo">
-            <img src="assets/logo.jpg" alt="Producciones Herova Logo">
+            <img src="assets/logo-cuadrado.png" alt="Producciones Herova Logo">
         </div>
 
         <div class="equalizer">
@@ -255,6 +281,15 @@
 
         <h1 style="color: var(--primary);">PRODUCCIONES HEROVA</h1>
         <p><span class="typing-text">Innovando experiencias musicales.</span></p>
+
+        <div class="social-links">
+            <a class="social-link instagram" href="https://www.instagram.com/producciones.herova?gwpx=MjExZnp5cWQ0dXo1" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Producciones Herova">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span>
+            </a>
+            <a class="social-link facebook" href="https://www.facebook.com/share/1CTtJYEnBn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Producciones Herova">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span>
+            </a>
+        </div>
 
         <div class="services">
             <h2>Servicios DJ</h2>
